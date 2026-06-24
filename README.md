@@ -1,2 +1,12 @@
 # BLE-TPS43
-NiceNano V2 BLE Touchpad, maybe also configurable macropad in due time.
+yeag
+
+```
+pio run -e adafruit_feather_nrf52840
+```
+Build a UF2
+```
+HEX=$(find .pio/build -name '*.hex' | head -n1)
+python ~/.platformio/packages/framework-arduinoadafruitnrf52/tools/uf2conv/uf2conv.py \
+  -f 0xADA52840 -c -o .pio/build/adafruit_feather_nrf52840/firmware.uf2 "$HEX"
+```
